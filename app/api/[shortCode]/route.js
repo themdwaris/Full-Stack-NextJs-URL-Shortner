@@ -29,7 +29,7 @@ export async function GET(req, {params}) {
     let city = "unknown",
       region = "unknown";
     try {
-      const res = await fetch(`https://ipapi.co/8.8.8.8/json/`);
+      const res = await fetch(`https://ipapi.co/${ip}/json/`);
       const data = await res.json();
       city = data.city || "unknown";
       region = data.region || "unknown";

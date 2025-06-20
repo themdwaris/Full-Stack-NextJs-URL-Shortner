@@ -98,12 +98,12 @@ const Stats = ({stats,shortCode,originalUrl,totalClicks,setOpenStats}) => {
         </h1>
         <div className="flex flex-col items-center">
           <a
-            href={`${process.env.NEXT_PUBLIC_API_URL}/api/${shortCode}`}
+            href={`${process.env.NEXT_PUBLIC_API_URL}/${shortCode}`}
             target='_blank'
             rel="noopener noreferrer"
             className="text-xl font-bold text-blue-300 cursor-pointer transition transform active:scale-90 hover:underline"
           >
-            {`sl.vercel.app/${shortCode}`}
+            {`mymd.vercel.app/${shortCode}`}
           </a>
           <div className="flex items-center py-3">
             <p className="text-slate-100 font-semibold text-sm flex items-center gap-0.5">
@@ -124,15 +124,7 @@ const Stats = ({stats,shortCode,originalUrl,totalClicks,setOpenStats}) => {
               <p className="font-semibold">Total Clicks</p>
               <p className="font-bold mt-2">{totalClicks}</p>
             </div>
-            {/* <div>
-              <p className="font-semibold text-balance mb-2">
-                <span className="text-slate-200">City:</span> <span>{stats?.city}</span>
-              </p>
-              <p className="font-semibold text-balance">
-                <span className="text-slate-200">Region:</span>
-                <span>{stats?.region}</span>
-              </p>
-            </div> */}
+            
           </div>
 
           <div className="mt-8">

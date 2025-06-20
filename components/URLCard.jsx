@@ -34,12 +34,12 @@ const URLCard = ({ url }) => {
       <div className="flex items-center">
         
         <a
-          href={`${process.env.NEXT_PUBLIC_API_URL}/api/${shortCode}`}
+          href={`${process.env.NEXT_PUBLIC_API_URL}/${shortCode}`}
           target="_blank"
           rel="noopener noreferrer"
           className="pb-3 text-base font-semibold text-blue-300 cursor-pointer transition transform active:scale-90 hover:underline"
         >
-          {`sl.vercel.app/${shortCode}`}
+          {`mymd.vercel.app/${shortCode}`}
         </a>
       </div>
       <div className="flex items-center">

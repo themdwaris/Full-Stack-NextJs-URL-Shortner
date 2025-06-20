@@ -51,7 +51,7 @@ export async function POST(req) {
     await newUrl.save();
 
     return NextResponse.json({
-      shortUrl: `${process.env.BASE_URL}/api/${newUrl.shortCode}`,
+      shortUrl: `${process.env.BASE_URL}/${newUrl.shortCode}`,
       originalUrl: newUrl.originalUrl,
       success: true,
     });
