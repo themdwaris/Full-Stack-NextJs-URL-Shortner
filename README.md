@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# URL Shortener App
 
-## Getting Started
+A powerful and modern full-stack URL Shortener web application built using **Next.js**, **MongoDB**, and **Tailwind CSS**, with user authentication, click tracking, QR code generation, and a sleek UI.
 
-First, run the development server:
+---
+
+## 🔥 Features
+
+* ✅ User authentication (manual JWT-based login/signup)
+* ✅ Shorten long URLs with a custom short code
+* ✅ Track total clicks
+* ✅ Click statistics over time (date, time, IP, city, region)
+* ✅ Visual stats via Chart.js (Bar & Line Chart)
+* ✅ Copy short URL to clipboard
+* ✅ QR code generation & download
+* ✅ Dark/light theme support via `next-themes`
+* ✅ Secure delete for only authenticated user's own links
+* ✅ Fully responsive UI using Tailwind CSS
+
+---
+
+## 🚀 Tech Stack
+
+**Frontend:**
+
+* Next.js (App Router)
+* Tailwind CSS
+* Chart.js (`react-chartjs-2`)
+* next-themes
+* html-to-image
+
+**Backend:**
+
+* Next.js API routes
+* MongoDB (Mongoose)
+* JWT for auth (manual handling)
+* IP Geolocation via ipapi.co
+
+---
+
+## 🗂 Folder Structure
+
+```
+├── app
+│   ├── api
+│   │   ├── shorten            # POST to shorten URL
+│   │   └── [shortCode]       # GET for redirection, DELETE for deletion
+│   ├── dashboard             # Protected dashboard
+│   ├── login / register      # Auth pages
+│   └── layout.js             # Global layout with ThemeProvider
+├── components
+│   ├── DarkModeToggle.js     # Theme switch
+│   ├── Hero.js               # Main landing page form
+│   ├── URLCard.js            # Card to display each shortened URL
+│   ├── Stats.js              # Chart.js visualisation
+│   ├── StatsPopup.js         # Popup wrapper
+│   └── Footer.js             # Footer
+├── context
+│   └── urlContext.js         # URL fetch context
+├── model
+│   └── urlModel.js           # Mongoose URL + ClickStats schema
+├── utils
+│   └── auth.js               # getCurrentUser helper
+├── config
+│   └── db.js                 # MongoDB connection setup
+├── public
+│   └── favicon.ico etc.
+├── .env.local                # Local env vars
+├── tailwind.config.js        # Tailwind setup
+└── README.md
+```
+
+---
+
+## ⚙️ How to Run Locally
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/yourusername/url-shortener-app.git
+cd url-shortener-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup Environment Variables
+
+Create a `.env.local` file:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+NEXT_PUBLIC_API_URL=http://localhost:3000
+```
+
+### 4. Run the dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Open in browser
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Visit: [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Deployment (Vercel)
 
-To learn more about Next.js, take a look at the following resources:
+* Push code to GitHub
+* Connect GitHub repo with [Vercel](https://vercel.com/)
+* Add your env variables in Vercel → Project Settings → Environment Variables
+* Redeploy after adding the live domain to `NEXT_PUBLIC_API_URL`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🙌 Author
 
-## Deploy on Vercel
+**Mohammad Waris**
+Feel free to reach out for improvements, issues, or collaborations!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
