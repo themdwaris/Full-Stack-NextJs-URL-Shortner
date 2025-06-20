@@ -64,7 +64,7 @@ const Header = () => {
               )}
             </div>
           ) : (
-            <Link href="/login" className="px-2.5 py-1 rounded-full bg-gradient-to-r from-slate-200 to-slate-300 text-black font-bold cursor-pointer text-sm transition transform active:scale-90">
+            <Link href="/login" className="px-2.5 py-1 select-none rounded-full bg-gradient-to-r from-slate-200 to-slate-300 text-black font-bold cursor-pointer text-sm transition transform active:scale-90">
               Login
             </Link>
           )}

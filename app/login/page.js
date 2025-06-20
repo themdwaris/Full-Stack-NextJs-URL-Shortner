@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { useURL } from "@/context/urlContext";
 
 const Login = () => {
-  const [authState, setAuthState] = useState("register");
+  const [authState, setAuthState] = useState("login");
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
