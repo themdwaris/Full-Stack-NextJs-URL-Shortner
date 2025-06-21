@@ -10,7 +10,7 @@ import { useURL } from "@/context/urlContext";
 import Loader from "./Loader";
 
 const Hero = () => {
-  const { user,router } = useURL();
+  const {router } = useURL();
   const [url, setUrl] = useState("");
   const [shortUrl, setShorUrl] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,13 +18,7 @@ const Hero = () => {
 
   const shortenURLHandler = async (e) => {
     e.preventDefault();
-
-    if (!user) {
-      toast.error("Login first");
-      router.push('/login')
-      return;
-    }
-
+    
     if (shortUrl && shortUrl.length > 0) {
       setShorUrl("");
       setUrl("");
@@ -39,6 +33,8 @@ const Hero = () => {
         setShorUrl(res.data.shortUrl);
       } else {
         setLoading(false);
+        toast.error('Login first')
+        router.push('/login')
         console.log(res.data.message);
       }
     } catch (error) {

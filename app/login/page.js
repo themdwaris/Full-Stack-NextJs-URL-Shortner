@@ -56,7 +56,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="w-full flex items-center justify-center h-[80vh] px-5">
+    <div className="w-full flex items-center justify-center h-screen px-5">
       <div className="w-full max-w-[450px] mx-auto bg-white/10 rounded-lg py-4 px-6 border border-gray-600 flex flex-col items-center text-slate-100">
         <h1 className="text-center text-3xl md:text-4xl font-bold py-3 bg-gradient-to-r from-slate-100 to-slate-400 inline-block text-transparent bg-clip-text">
           {authState === "register" ? "Sign Up" : "Sign In"}
