@@ -35,8 +35,8 @@ export default async function RedirectPage({ params }) {
       try {
         const res = await fetch(`https://ipapi.co/${ip}/json/`);
         const data = await res.json();
-        city = data.city || "unknown";
-        region = data.region || "unknown";
+        city = data?.city || "unknown";
+        region = data?.region || "unknown";
       } catch (err) {
         console.error("IP location fetch failed:", err.message);
       }
