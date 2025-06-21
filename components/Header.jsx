@@ -27,7 +27,7 @@ const Header = () => {
               </div>
               
               {openMenu && (
-                <div className="w-36 px-4 py-3 rounded-lg bg-white/15 md:bg-white/10 flex flex-col items-start gap-3 overflow-hidden absolute right-6 z-40">
+                <div className="w-36 px-4 py-3 rounded-lg bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-start gap-3 overflow-hidden absolute right-6 z-40">
                   <div className="flex items-center gap-2.5">
                     <span className="text-slate-100">
                       <TiHome size={20} />
